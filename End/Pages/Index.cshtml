@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "ASP.NET Core and Microsoft Graph";
+}
+
+<div>
+    <h1>ASP.NET Core and Microsoft Graph</h1>
+    <br />
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h4>
+            @if (Model.UserPhoto != null)
+            {
+                <img src="data:image/jpeg;base64, @Model.UserPhoto" class="user-photo nav-profile-photo rounded-circle align-self-center mr-2" />
+            }
+            Welcome @Model.UserDisplayName!</h4>
+    }
+    else
+    {
+        <a class="btn btn-primary btn-large" href="https://localhost:5001/signin-oidc">Click here to sign in</a>
+    }
+</div>

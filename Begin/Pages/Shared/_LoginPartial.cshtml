@@ -1,0 +1,38 @@
+@using DotNetCoreRazor_MSGraph
+@inject DotNetCoreRazor_MSGraph.Graph.GraphProfileClient GraphProfileClient
+@{
+    var presenceCssClass = await GraphProfileClient.GetPresenceCssClass();
+    var userProfile = await GraphProfileClient.GetUserProfile();
+    var userProfileImage = await GraphProfileClient.GetUserProfileImage();
+}
+
+<ul class="nav navbar-nav">
+@if (User.Identity.IsAuthenticated)
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+            @if (userProfileImage != null)
+            {
+                <img src="data:image/jpeg;base64, @userProfileImage" 
+                    class="user-photo-small @presenceCssClass nav-profile-photo rounded-circle align-self-center mr-2" />
+                    <!-- User Presence Availability: @presenceCssClass -->
+            }
+            else 
+            {
+                @userProfile.DisplayName
+            }
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <h5 class="dropdown-item-text mb-0">@userProfile.DisplayName</h5>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://login.microsoftonline.com/common/oauth2/v2.0/logout">Sign out</a>
+        </div>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+    </li>
+}
+</ul>

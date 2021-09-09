@@ -1,0 +1,46 @@
+@page
+@model EmailModel
+@{
+    ViewData["Title"] = "ASP.NET Core and Microsoft Graph";
+}
+
+<div>
+    <h1>Email</h1>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (Model.Messages != null && Model.Messages.Any()) {
+            @* Add foreach here *@
+
+                <div class="card" style="width: 50rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @* Add message subject here *@
+
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            @* Add message received date/time here *@
+                            
+                        </h6>
+                        <p class="card-text">
+                            @* Add message body preview here *@
+                            
+                        </p>
+                    </div>
+                </div>
+                <br />
+
+            @* Add foreach closing bracket here *@
+
+            @if (!String.IsNullOrEmpty(Model.NextLink)) {
+                <a asp-page="/Email" asp-route-nextlink="@Model.NextLink" class="btn btn-primary">Next Page</a>
+            }
+        }
+        else {
+            <div>No Messages found</div>
+        }
+    }
+    else
+    {
+        <a class="btn btn-primary btn-large" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Click here to sign in</a>
+    }
+</div>

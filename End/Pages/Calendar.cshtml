@@ -1,0 +1,52 @@
+@page
+@model CalendarModel
+@{
+    ViewData["Title"] = "ASP.NET Core and Microsoft Graph";
+}
+
+<div>
+    <h1>Calendar Events</h1>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (Model.Events != null && Model.Events.Any()) {
+            @foreach(var evt in Model.Events) 
+            {
+                 <div class="card" style="width: 50rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @evt.Subject 
+                        </h5>
+                        <p class="card-text">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <strong>Start:</strong>
+                                    </div>
+                                    <div class="col">
+                                        @Model.FormatDateTimeTimeZone(evt.Start)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                         <strong>End:</strong>
+                                    </div>
+                                    <div class="col">
+                                        @Model.FormatDateTimeTimeZone(evt.End)
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <br />
+            }
+        }
+        else {
+            <div>No calendar events found</div>
+        }
+    }
+    else
+    {
+        <a class="btn btn-primary btn-large" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Click here to sign in</a>
+    }
+</div>

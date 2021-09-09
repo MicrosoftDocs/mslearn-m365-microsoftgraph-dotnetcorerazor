@@ -1,0 +1,48 @@
+@page
+@model FilesModel
+@{
+    ViewData["Title"] = "Upload File";
+}
+ 
+<div>
+    <h1>Files</h1>
+    @if (User.Identity.IsAuthenticated) {
+
+        <div>
+            <!-- Add for file download -->
+            @if (Model.Files != null && Model.Files.Count > 0) 
+            {   
+                <br />
+                <label>Files in your OneDrive root folder:</label> @Model.Files.Count()
+                <ul id="downloadLinks">
+                    @foreach(var file in Model.Files) {
+                        if (file.Folder == null && file.Package == null) {
+                            <li>
+                                <a asp-page-handler="DownloadFile" 
+                                   asp-route-name="@file.Name"
+                                   asp-route-id="@file.Id">@file.Name</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            }
+            else 
+            {
+                <div>No files found</div>
+            }
+        </div>
+    
+        <br /><br />
+        <h3>Upload File</h3>
+        <hr />
+        <form method="post" enctype="multipart/form-data">
+            <input asp-for="UploadedFile" type="file">
+            <input type="submit" value="Upload File">
+        </form>
+
+    }
+    else
+    {
+        <a class="btn btn-primary btn-large" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Click here to sign in</a>
+    }
+</div>
