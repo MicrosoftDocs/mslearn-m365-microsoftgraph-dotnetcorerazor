@@ -35,7 +35,7 @@ namespace DotNetCoreRazor_MSGraph.Graph
                                 msg.BodyPreview,
                                 msg.ReceivedDateTime
                             })
-                            .OrderBy("receivedDateTime")
+                            .OrderBy("receivedDateTime desc")
                             .Top(10)
                             .GetAsync();
 
