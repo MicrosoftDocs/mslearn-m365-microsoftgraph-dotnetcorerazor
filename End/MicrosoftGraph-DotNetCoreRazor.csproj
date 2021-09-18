@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>DotNetCoreRazor_MSGraph</RootNamespace>
-    <UserSecretsId>2edc276d-b61c-4a39-834b-4d5390b57434</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
