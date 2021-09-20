@@ -1,12 +1,18 @@
 ## .NET Core Razor Pages with Microsoft Graph
 
+This repository is used with the [**Explore Microsoft Graph scenarios for ASP.NET Core development**](https://docs.microsoft.com/learn/paths/m365-msgraph-dotnetcore-scenarios) learning path on Microsoft Learn. To get started, visit the learning path and select one of the modules.
+
+## General Setup Steps to Run the End Solution
+
+See the [Microsoft Learn learning path](https://docs.microsoft.com/learn/paths/m365-msgraph-dotnetcore-scenarios) mentioned above for full details.
+
 1. Ensure you have .NET 5+ installed on your machine. You can download and install it from the following link:
 
     https://dot.net
 
 1. Create a Microsoft 365 developer tenant if you don't already have one:
 
-    https://developer.microsoft.com/en-us/microsoft-365/dev-program
+    https://developer.microsoft.com/microsoft-365/dev-program
 
     You can view a video that covers key tips here:
 
@@ -19,7 +25,7 @@
     - Select `App registrations` in the `Manage` section.
     - Select `New registration` in the toolbar.
     - Give the app a name.
-    - Select `Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)` in the `Supported account types`.
+    - Select `Accounts in any organizational directory (Any Azure AD directory - Multitenant)` in the `Supported account types`.
     - In the Redirect URI section select `Web` and enter the following URL:
 
         https://localhost:5001
@@ -30,11 +36,15 @@
 
         https://localhost:5001/signin-oidc
 
+    - Add the following URL into the `Front-channel logout URL` section:
+
+        https://localhost:5001:signout-oidc
+
     - Check the `ID tokens` checkbox.
     - Save your changes.
     - Click `Certificates & secrets` and create a new client secret. Ensure that you copy and store the secret somewhere since this is the only time you'll be able to access it. You'll need it in the next step.
 
-1. Open a terminal window at the root of the `DotnetCoreRazor-MicrosoftGraph` folder and run the following commands, substituting `YOUR_APP_ID` with your `Application (client) ID` from the Azure portal, and `YOUR_APP_SECRET` with the application secret you created. 
+1. Open a terminal window at the root of the `End` folder and run the following commands, substituting `YOUR_APP_ID` with your `Application (client) ID` from the Azure portal, and `YOUR_APP_SECRET` with the application secret you created. 
 
 ```
 dotnet user-secrets init 
@@ -47,7 +57,7 @@ dotnet user-secrets set "AzureAd:ClientSecret" "YOUR_APP_SECRET"
 1. Run `dotnet run`
 
 1. Once the app is running, navigate to https://localhost:5001 and login using one of your Microsoft 365 tenant users.
-1. Once you're logged in you should see your user name displayed. Click on the menu items at the top to view the user's email, calendar (you may need to add calendar items for the user), and files.
+1. Once you're logged in you should see your user name displayed. Click on the menu items at the top to view the user's email, calendar, and files (you may need to add mail messages, calendar events, and files for the user if you don't see any).
 
 NOTE: If you get an SSL certificate error, you can generate a dev certificate for your machine using the following command:
 

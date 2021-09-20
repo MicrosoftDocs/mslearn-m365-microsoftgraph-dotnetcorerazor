@@ -35,7 +35,7 @@ namespace DotNetCoreRazor_MSGraph.Graph
                                 msg.BodyPreview,
                                 msg.ReceivedDateTime
                             })
-                            .OrderBy("receivedDateTime")
+                            .OrderBy("receivedDateTime desc")
                             .Top(10)
                             .GetAsync();
 
@@ -71,7 +71,7 @@ namespace DotNetCoreRazor_MSGraph.Graph
             else 
             {
                 // Use the next page request URI value to get the page of messages
-                UserMessagesCollectionRequest messagesCollectionRequest = 
+                var messagesCollectionRequest = 
                     new UserMessagesCollectionRequest(nextPageLink, _graphServiceClient, null);
                 pagedMessages = await messagesCollectionRequest.GetAsync();
             }
