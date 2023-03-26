@@ -1,10 +1,10 @@
 ## .NET Core Razor Pages with Microsoft Graph
 
-This repository is used with the [**Explore Microsoft Graph scenarios for ASP.NET Core development**](https://docs.microsoft.com/learn/paths/m365-msgraph-dotnetcore-scenarios) learning path on Microsoft Learn. To get started, visit the learning path and select one of the modules.
+This repository is used with the [**Explore Microsoft Graph scenarios for ASP.NET Core development**](https://learn.microsoft.com/en-us/training/paths/m365-msgraph-dotnet-core-scenarios/) learning path on Microsoft Learn. To get started, visit the learning path and select one of the modules.
 
 ## General Setup Steps to Run the End Solution
 
-See the [Microsoft Learn learning path](https://docs.microsoft.com/learn/paths/m365-msgraph-dotnetcore-scenarios) mentioned above for full details.
+See the [Microsoft Learn learning path](https://learn.microsoft.com/en-us/training/paths/m365-msgraph-dotnet-core-scenarios/) mentioned above for full details.
 
 1. Ensure you have .NET 5+ installed on your machine. You can download and install it from the following link:
 
