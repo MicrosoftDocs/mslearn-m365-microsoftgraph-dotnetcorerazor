@@ -4,7 +4,7 @@ This repository is used with the [**Explore Microsoft Graph scenarios for ASP.NE
 
 ## General Setup Steps to Run the End Solution
 
-See the [Microsoft Learn learning path](https://docs.microsoft.com/learn/paths/m365-msgraph-dotnetcore-scenarios) mentioned above for full details.
+See the [Microsoft Learn learning path](https://learn.microsoft.com/training/paths/m365-msgraph-dotnet-core-scenarios) mentioned above for full details.
 
 1. Ensure you have .NET 6+ installed on your machine. You can download and install it from the following link:
 
@@ -89,7 +89,7 @@ may be either trademarks or registered trademarks of Microsoft in the United Sta
 The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks.
 Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
 
-Privacy information can be found at https://privacy.microsoft.com/en-us/
+Privacy information can be found at https://privacy.microsoft.com
 
 Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel or otherwise.
