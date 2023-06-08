@@ -6,7 +6,7 @@ This repository is used with the [**Explore Microsoft Graph scenarios for ASP.NE
 
 See the [Microsoft Learn learning path](https://docs.microsoft.com/learn/paths/m365-msgraph-dotnetcore-scenarios) mentioned above for full details.
 
-1. Ensure you have .NET 5+ installed on your machine. You can download and install it from the following link:
+1. Ensure you have .NET 6+ installed on your machine. You can download and install it from the following link:
 
     https://dot.net
 

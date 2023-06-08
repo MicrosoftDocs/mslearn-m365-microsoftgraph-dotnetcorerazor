@@ -61,7 +61,7 @@ namespace DotNetCoreRazor_MSGraph.Graph
 
         public async Task UploadFile(string fileName, Stream stream)
         {
-            var itemPath = Uri.EscapeUriString(fileName);
+            var itemPath = Uri.EscapeDataString(fileName);
             var size = stream.Length / 1000;
             _logger.LogInformation($"Stream size: {size} KB");
             if (size/1000 > 4)
