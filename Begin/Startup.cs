@@ -63,7 +63,7 @@ namespace DotNetCoreRazor_MSGraph
                 // Add Razor Pages support
                 .AddRazorPages()
 
-                // Add Microsoft Identity UI pages that provide user 
+                // Add Microsoft Identity UI pages that provide user
                 .AddMicrosoftIdentityUI();
 
             services.AddScoped<GraphProfileClient>();
@@ -100,6 +100,7 @@ namespace DotNetCoreRazor_MSGraph
             });
         }
 
+        /// <summary>
         /// Gets the secret from key vault via an enabled Managed Identity.
         /// </summary>
         /// <remarks>https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet/blob/master/README.md</remarks>

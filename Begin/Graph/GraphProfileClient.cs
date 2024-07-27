@@ -34,7 +34,7 @@ namespace DotNetCoreRazor_MSGraph.Graph
                         u.DisplayName
                     })
                     .GetAsync();
-                    
+
                 return currentUser;
             }
             // Catch CAE exception from Graph SDK
