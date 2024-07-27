@@ -38,17 +38,17 @@ See the [Microsoft Learn learning path](https://learn.microsoft.com/training/pat
 
     - Add the following URL into the `Front-channel logout URL` section:
 
-        https://localhost:5001:signout-oidc
+        https://localhost:5001/signout-oidc
 
     - Check the `ID tokens` checkbox.
     - Save your changes.
     - Click `Certificates & secrets` and create a new client secret. Ensure that you copy and store the secret somewhere since this is the only time you'll be able to access it. You'll need it in the next step.
 
-1. Open a terminal window at the root of the `End` folder and run the following commands, substituting `YOUR_APP_ID` with your `Application (client) ID` from the Azure portal, and `YOUR_APP_SECRET` with the application secret you created. 
+1. Open a terminal window at the root of the `End` folder and run the following commands, substituting `YOUR_APP_ID` with your `Application (client) ID` from the Azure portal, and `YOUR_APP_SECRET` with the application secret you created.
 
 ```
-dotnet user-secrets init 
-dotnet user-secrets set "AzureAd:ClientId" "YOUR_APP_ID" 
+dotnet user-secrets init
+dotnet user-secrets set "AzureAd:ClientId" "YOUR_APP_ID"
 dotnet user-secrets set "AzureAd:ClientSecret" "YOUR_APP_SECRET"
 ```
 
